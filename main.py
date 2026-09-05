@@ -23,11 +23,18 @@ C. Max Sequence Length
 D. Emotion Labels
 E. Emotion emojis
 """
-#A. Model Path (BiGRU)
-model_path = "Artifacts/BiGRU_Model.keras"
+# #A. Model Path (BiGRU)
+# model_path = "Artifacts/BiGRU_Model.keras"
 
-#B. Tokenizer Path
-tokenizer_path = "Artifacts/tokenizer.pkl"
+# #B. Tokenizer Path
+# tokenizer_path = "Artifacts/tokenizer.pkl"
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
+model_path = BASE_DIR / "Artifacts" / "BiGRU_Model.keras"
+tokenizer_path = BASE_DIR / "Artifacts" / "tokenizer.pkl"
 
 #C. Max Sequence Length
 max_sequence_length = 50
