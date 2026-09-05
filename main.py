@@ -144,9 +144,12 @@ C. Predict Emotion Endpoint ('/predict')
 """
 
 #A. Server UI at homepage ('/')
-@app.get('/', include_in_schema=False)
+# @app.get('/', include_in_schema=False)
+# def server_ui():
+#     return FileResponse('static/index.html')
+@app.get("/", include_in_schema=False)
 def server_ui():
-    return FileResponse('static/index.html')
+    return {"message": "Emotion Prediction API is running"}
 
 #B. Health Check Endpoint ('/health')
 @app.get('/health', response_model=HealthResponse)
